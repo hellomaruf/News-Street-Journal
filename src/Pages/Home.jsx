@@ -78,7 +78,10 @@ function Home() {
                       {item?.rating.badge}
                     </div>
                   </div>
-                  <div className="">{item?.total_view}</div>
+                  <div className=" flex items-center gap-2">
+                    <i className="ri-eye-line text-xl"></i>
+                    {item?.total_view}
+                  </div>
                 </div>
               </div>
             </div>

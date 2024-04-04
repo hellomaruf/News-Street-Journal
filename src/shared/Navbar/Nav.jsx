@@ -28,6 +28,22 @@ function Nav() {
         >
           Career
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#BB1A17]" : "text-gray-800"
+          }
+          to="/login"
+        >
+          Login
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#BB1A17]" : "text-gray-800"
+          }
+          to="/register"
+        >
+          Register
+        </NavLink>
       </div>
     </>
   );
