@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
   const navLink = (
@@ -33,7 +33,7 @@ function Nav() {
   );
   return (
     <div>
-      <div className="navbar bg-base-100 my-14">
+      <div className="navbar bg-base-100 my-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,9 +70,12 @@ function Nav() {
             </div>
           </div>
           <div className="">
-            <a className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white">
+            <Link
+              to="/login"
+              className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white"
+            >
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </div>

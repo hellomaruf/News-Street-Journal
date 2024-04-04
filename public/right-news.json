@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/YNfVjp7/pexels-mido-makasardi-2872418.jpg",
+    "title": "Breaking: Fire outbreak reported in downtown area",
+    "category": "Breaking News",
+    "date": "2024-04-04"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/fx2Y3jr/pexels-polina-tankilevitch-3873191.jpg",
+    "title": "COVID-19 cases surge, authorities impose stricter measures",
+    "category": "Health",
+    "date": "2024-04-03"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/qgVpghT/pexels-pixabay-459728.jpg",
+    "title": "New study reveals alarming decline in bee populations",
+    "category": "Environment",
+    "date": "2024-04-02"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/cCyGgT9/pexels-fauxels-3183197.jpg",
+    "title": "Major tech company announces groundbreaking innovation",
+    "category": "Technology",
+    "date": "2024-04-01"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/G3pt5Qy/pexels-pixabay-248547.jpg",
+    "title": "Sports: Team secures victory in thrilling championship final",
+    "category": "Sports",
+    "date": "2024-03-31"
+  }
+]
