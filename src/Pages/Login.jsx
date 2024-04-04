@@ -37,8 +37,8 @@ function Login() {
               </a>
             </label>
           </div>
-          <div className="form-control mt-6">
-            <button className="btn bg-[#BB1A17] text-white">Login</button>
+          <div className="form-control mt-4">
+            <button className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white">Login</button>
           </div>
           <p>
             If you are new here then{" "}
