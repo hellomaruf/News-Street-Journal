@@ -11,13 +11,11 @@ function Home() {
       <LatestNews />
       <Nav />
       <div className="grid grid-cols-4 gap-4">
-        <div className="border bg-gray-300">
+        <div className=" ">
           <LeftSideNav />
         </div>
-        <div className="border bg-gray-300 col-span-2">
-          news comming soon*******
-        </div>
-        <div className=" border bg-gray-300">
+        <div className="col-span-2">news comming soon*******</div>
+        <div className="">
           <RightSideNav />
         </div>
       </div>
