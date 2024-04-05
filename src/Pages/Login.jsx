@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 import Nav from "../shared/Navbar/Nav";
+import { useContext } from "react";
+import { authContext } from "../Context/AuthProvider";
 
 function Login() {
+  const { loginUser } = useContext(authContext);
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    loginUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <Nav />
@@ -9,12 +22,16 @@ function Login() {
         <h1 className="text-center font-semibold text-2xl pb-7">
           Login your account
         </h1>
-        <form className="card-body max-w-3xl mx-auto bg-white rounded-xl">
+        <form
+          onSubmit={handleSignIn}
+          className="card-body max-w-3xl mx-auto bg-white rounded-xl"
+        >
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
             <input
+              name="email"
               type="email"
               placeholder="email"
               className="input input-bordered"
@@ -26,6 +43,7 @@ function Login() {
               <span className="label-text">Password</span>
             </label>
             <input
+              name="password"
               type="password"
               placeholder="password"
               className="input input-bordered"
@@ -38,7 +56,9 @@ function Login() {
             </label>
           </div>
           <div className="form-control mt-4">
-            <button className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white">Login</button>
+            <button className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white">
+              Login
+            </button>
           </div>
           <p>
             If you are new here then{" "}
