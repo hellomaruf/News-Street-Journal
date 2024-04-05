@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import Nav from "../shared/Navbar/Nav";
+import { useContext } from "react";
+import { authContext } from "../Context/AuthProvider";
 
 function Register() {
+  const { createUser } = useContext(authContext);
+  console.log(createUser);
+  const handleRegisterSubmission = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <Nav />
@@ -9,7 +25,10 @@ function Register() {
         <h1 className="text-center font-semibold text-2xl pb-7">
           Register your account
         </h1>
-        <form className="card-body max-w-3xl mx-auto bg-white rounded-xl">
+        <form
+          onSubmit={handleRegisterSubmission}
+          className="card-body max-w-3xl mx-auto bg-white rounded-xl"
+        >
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
