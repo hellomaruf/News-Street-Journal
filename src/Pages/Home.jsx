@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import LatestNews from "../Components/LatestNews";
 import LeftSideNav from "../Components/LeftSideNav";
 import RightSideNav from "../Components/RightSideNav";
@@ -42,7 +42,16 @@ function Home() {
               <div className="p-6">
                 <h2 className="text-2xl font-bold py-3">{item?.title}</h2>
                 <img src={item?.image_url} alt="" />
-                <p className="py-3">{item?.details}</p>
+                <p className="py-3">
+                  {item?.details.length > 200 ? (
+                    <p>
+                      {item?.details.slice(0, 200)}
+                      <Link to={`/news/${item?._id}`} className="text-[#BB1A17] font-semibold"> Read more....</Link>
+                    </p>
+                  ) : (
+                    <p>{item?.details}</p>
+                  )}
+                </p>
                 <div className="flex justify-between">
                   <div className="flex items-center text-md gap-2">
                     <div className="rating">

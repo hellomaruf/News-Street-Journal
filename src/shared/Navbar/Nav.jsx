@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../../Context/AuthProvider";
 
 function Nav() {
+  const { user, loggedOut } = useContext(authContext);
+  const handleSignOut = () => {
+    loggedOut();
+  };
   const navLink = (
     <>
       <div className="flex gap-8 font-medium">
@@ -86,12 +92,21 @@ function Nav() {
             </div>
           </div>
           <div className="">
-            <Link
-              to="/login"
-              className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white"
-            >
-              Login
-            </Link>
+            {user ? (
+              <button
+                onClick={handleSignOut}
+                className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white"
+              >
+                LogOut
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="btn bg-[#BB1A17] hover:bg-[#d23d3a] text-white"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

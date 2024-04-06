@@ -5,7 +5,6 @@ import { authContext } from "../Context/AuthProvider";
 
 function Register() {
   const { createUser } = useContext(authContext);
-  console.log(createUser);
   const handleRegisterSubmission = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
