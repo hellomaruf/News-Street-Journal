@@ -5,7 +5,6 @@ import { useParams, useLoaderData, Link } from "react-router-dom";
 
 function NewsDetails() {
   const { id } = useParams();
-  console.log(id);
   const allData = useLoaderData();
   const specificData = allData.find((news) => {
     return news._id === id;
